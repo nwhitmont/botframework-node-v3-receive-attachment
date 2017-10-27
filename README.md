@@ -60,7 +60,7 @@ var checkRequiresToken = function (message) {
 
 ### More Information
 
-To get more information about how to get started in Bot Builder for Node and Attachments please review the following resources:
+To get more information about how to get started in Bot Builder for Node.js and Attachments please review the following resources:
 * [Bot Builder for Node.js Reference](https://docs.microsoft.com/en-us/bot-framework/nodejs/)
 * [Message.attachments](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.message.html#attachments)
 * [Attachment](https://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.iattachment.html)
