@@ -38,9 +38,15 @@ var bot = new builder.UniversalBot(connector, function (session) {
                     .text('Attachment of %s type and size of %s bytes received.', attachment.contentType, response.length);
                 session.send(reply);
 
-                var echoImage = new builder.Message(session).text('You sent:').addAttachment(attachment);
+                // convert image to base64 string
+                var imageBase64Sting = new Buffer(response, 'binary').toString('base64');
+                // echo back uploaded image as base64 string
+                var echoImage = new builder.Message(session).text('You sent:').addAttachment({
+                    contentType: attachment.contentType,
+                    contentUrl: 'data:' + attachment.contentType + ';base64,' + imageBase64Sting,
+                    name: 'Uploaded image'
+                });
                 session.send(echoImage);
-
             }).catch(function (err) {
                 console.log('Error downloading attachment:', { statusCode: err.statusCode, message: err.response.statusMessage });
             });
